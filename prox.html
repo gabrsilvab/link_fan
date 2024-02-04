@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <style>
+        #timer {
+          font-size: 24px;
+          text-align: center;
+          margin-top: 50px;
+          color: white;
+        }
+      </style>
+
+    <body>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="">
+        </div>
+
+<div class="botão">
+
+        <h1>
+            As coisas voltam
+        </h1>
+
+        <div id="timer">00:00:00</div>
+
+
+
+<div class="rodape">
+
+<span>Direitos Reservados Fãnerd© / Email de contato: fanncomercial@gmail.com</span>
+
+</div>
+
+</div>
+
+
+<script>
+     function formatTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+  }
+
+  function startTimer(endTime) {
+    const timerElement = document.getElementById('timer');
+
+    function updateTimer() {
+      const currentTime = Math.floor((endTime - Date.now()) / 1000);
+
+      if (currentTime > 0) {
+        timerElement.textContent = formatTime(currentTime);
+      } else {
+        clearInterval(timerInterval);
+        alert('Sem datas ainda');
+      }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // Atualizar imediatamente ao iniciar para evitar atraso de um segundo
+  }
+
+  // Defina a data para 30 de fevereiro de 2024 às 12:00 (meio-dia)
+  const endDate = new Date(2023, 2, 12, 12, 0, 0, 0); // Mês é zero-indexed
+
+  // Verifique se a data é válida antes de iniciar o timer
+  if (!isNaN(endDate.getTime())) {
+    startTimer(endDate.getTime());
+  } else {
+    alert('Data inválida!');
+  }
+  </script>
+  
+
+    </body>
+
+</html>
