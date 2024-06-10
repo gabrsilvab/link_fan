@@ -24,7 +24,7 @@ h1 {
         padding: 17px 35px;
         background-color: black;
         color: white;
-        font-family: Arial, sans-serif;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
         font-size: 20px;
         border: none;
         border-radius: 18px;
@@ -33,7 +33,7 @@ h1 {
     }
 
     .botão button:hover {
-        background-color: #0056b3;
+        background-color: #87CEEB;
     }
 
 
